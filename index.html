@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Suhweeet Navs</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto:400,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+  <header class="hero" id="home">
+    <div class="wrapper">
+      <nav class="naviMain">
+        <ul>
+          <li class="toggleThis">
+            <!-- NOTE: Add a LABEL w/ accessibility to go with it too. -->
+            <label for="navToggle" class="navToggleLabel">
+              <i class="fas fa-bars" aria="true" title="Hey! Click Me!"></i>
+              <span class="sr-only visuallyhidden">Hey! Click me!</span>
+            </label>
+          </li>
+        </ul>
+      </nav>
+      <!-- TOGGLE: Menu Bar (Hidden) -->
+      <!-- NOTE: Put input checkbox beside the ICON that will be TOGGLED ON/ OFF. -->
+      <input type="checkbox" class="navToggle" id="navToggle">
+      <nav class="naviMainTwo">
+        <ul>
+          <li>
+            <a href="#home"><i class="fas fa-home" aria="true" title="Home"></i>
+              <span class="sr-only visuallyhidden">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#bio"><i class="far fa-angry" aria="true" title="Profile"></i>
+              <span class="sr-only visuallyhidden">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#collection"><i class="fas fa-fist-raised" aria="true" title="Collection"></i>
+              <span class="sr-only visuallyhidden">Collection</span>
+            </a>
+          </li>
+          <li>
+            <a href=""><i class="fas fa-th-large" aria="true" title="Gallery"></i>
+              <span class="sr-only visuallyhidden">Gallery</span>
+            </a>
+          </li>
+          <li>
+            <a href=""><i class="fas fa-envelope-open-text" aria="true" title="Email"></i>
+              <span class="sr-only visuallyhidden">Email</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="heroTitle">
+        <div class="heroText">
+          <h1>Thanos</h1>
+          <p>Eternal-Deviant Hybrid. Supervillain. Mad Titan.</p>
+          <p>Loves. Purple. Things.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="bio section" id="bio">
+    <div class="wrapper">
+      <h2>Biography</h2>
+      <div class="bioContent">
+        <div class="bioLeft">
+          <img src="./downloads/bioPlanetTwo.jpg" alt="Thanos' Home Planet.">
+        </div>
+        <div class="bioRight">
+          <h3>Titan</h3>
+
+          <p>Liquorice topping cookie. Gingerbread biscuit cupcake soufflé lollipop. Gummi bears powder topping. Cotton candy caramels lollipop ice cream. Lemon drops jelly beans liquorice candy sesame snaps dessert wafer. Tart biscuit macaroon pastry pie.</p>
+
+          <p>Tootsie roll liquorice cake jelly. Fruitcake chupa chups cupcake cupcake muffin sweet roll.
+          Gingerbread sweet jelly cake oat cake. Candy lemon drops tiramisu fruitcake bear claw croissant icing cake jelly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="collection section" id="collection">
+    <div class="wrapper">
+      <h2>My Fruit Gushers</h2>
+      <div class="stones">
+        <div class="stoneContainer">
+          <img src="./assets/stoneRed.jpg" alt="Is it Reality Stone?">
+        </div>
+        <div class="stoneContainer">
+          <img src="./assets/stoneYellow.jpg" alt="Mind Blown Stone.">
+        </div>
+        <div class="stoneContainer">
+          <img src="./assets/stoneGreen.jpg" alt="Time tick tock Stone">
+        </div>
+      </div>
+      <div class="stones">
+        <div class="stoneContainer four">
+          <img src="./assets/stoneOrange.jpg" alt="Soul Sucking Stone">
+        </div>
+        <div class="stoneContainer">
+          <img src="./assets/stoneBlue.jpg" alt="Spacejam Stone">
+        </div>
+        <div class="stoneContainer">
+          <img src="./assets/stonePurple.jpg" alt="Poweraaa over 9000 Stone">
+        </div>
+      </div>
+      <p>
+        Note: Photos are taken from esty.com by soulinertiaDesigns. And these stones are mine so uh... they are not for sale. Heh.
+      </p>
+    </div>
+  </section>
+  <!--===========================================================================-->
+  <!-- JQUERY: Scripting -->
+  <!--===========================================================================-->
+
+  <!-- NOTE: jQuery CDN + Smooth scroll is commented out because it is not needed... we will be using CSS native smooth-behaviour: smooth to simply achieve it... but if you want more customization use the smooth scroll js and follow the init from the instructions. -->
+  <!-- 3RD PARTY: -->
+  <!-- place your jQuery CDN here -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+  <!-- ACTIVE: Smooth Scroll -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script> -->
+
+    <script>
+    // lets create a variable "navLinks" and get the first element in the document with the document.querySelectorAll
+    // here i am targetting the a tag so I put in nav ul li a... it could work with just putting 'a' inside, you may have to experiment with that if you want.
+    let navLinks = document.querySelectorAll(`nav ul li a`);
+    // let sections = document.querySelectorAll(`section`);
+
+    // here's the window event listener tracking the user's scroll
+    window.addEventListener(`scroll`, event => {
+      // variable to retrieve number of pixels which the contents of the document are scrolled on the Y axis.
+      let fromTop = window.scrollY;
+
+      // map through our navLinks variable... for each...
+      navLinks.forEach(link => {
+
+        // document.querySelector returns the first Element within the document that matches the specified selector, or group of selectors... (.hash I totally forgot what it does so you may have look into it more sorry!)
+        let section = document.querySelector(link.hash);
+
+        if (
+          // this code here does calculations based on the user's Y axis scroll and the height of where each section is located?
+          section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          // add a class of current if its within the range of the viewport of the section
+          // refer to _navigation.scss line 47 to style the added .current class
+          link.classList.add(`current`);
+        } else {
+          // remove the class of curent if its outside the range of viewport of the section
+          link.classList.remove(`current`);
+        }
+
+      });
+    });
+
+    </script>
+</body>
+</html>
+

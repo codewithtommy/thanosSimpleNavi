@@ -1,0 +1,81 @@
+// MAIN NAV
+// grouped/ similar styling for dryness
+.naviMain,
+.naviMainTwo {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  position: fixed;
+  width: 5.5%;
+  z-index: 1000;
+}
+
+// nav w/ toggle for on/ off
+.naviMain {
+  top: 2%;
+  left: 2%;
+}
+
+// nav w/ links
+.naviMainTwo {
+  transition: all 1s;
+  top: 15%;
+  left: -10%;
+  z-index: 1000;
+}
+
+ul {
+  list-style: none;
+  margin: 0%;
+  padding: 5%;
+
+  li {
+    padding: 20%;
+  }
+
+  li a{
+    color: #000000;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 300;
+    justify-content: space-evenly;
+    padding: 2.5%;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  // NOTE: once a class of current is added on... this is where we want to style it with a color/ transform/ etc.
+  li a.current {
+    color: #9370DB;
+    text-shadow: 1px 1px 2px #000000;
+    transform: scale(1.4);
+  }
+}
+
+label {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+input:checked + .naviMainTwo {
+  left: 2%;
+}
+
+input {
+  display: none;
+}
+
+i {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: #9370DB;
+    text-shadow: 1px 1px 2px #000000;
+    transform: scale(1.2);
+  }
+}
+
+input:checked + .naviMainThree {
+  left: 2%;
+}

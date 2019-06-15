@@ -1,0 +1,28 @@
+.collection {
+  background: #FFEC74;
+
+  .wrapper {
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 10%;
+
+    p {
+      color: #000000;
+      padding-top: 2.5%;
+      text-shadow: none;
+    }
+  }
+}
+
+.stones {
+  display: flex;
+
+  .stoneContainer {
+    width: 50%;
+    padding: .5%;
+  }
+}
+
+.four img {
+  height: 329.3px;
+}
